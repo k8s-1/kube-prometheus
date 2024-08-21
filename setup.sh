@@ -1,5 +1,5 @@
 #!/bin/bash
-./build.sh setup.jsonnet
+./build.sh main.jsonnet
 
 kubectl create ns actions-runner-system
 
