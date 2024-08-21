@@ -7,7 +7,7 @@ kubectl create namespace myns2
 
 sleep 3
 
-kubectl apply -f manifests/setup
+kubectl apply --server-side -f manifests/setup
 kubectl wait --for condition=Established --all CustomResourceDefinition -n monitoring
 
 kubectl apply -f manifests/
