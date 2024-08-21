@@ -11,5 +11,6 @@ kubectl apply -f manifests/
 kubectl wait --for=condition=ready pod -l app.kubernetes.io/name=prometheus -n monitoring --timeout 300s
 kubectl -n monitoring port-forward svc/prometheus-k8s 9090:9090 > /dev/null 2>&1 &
 
+echo
 echo "Metrics are being monitored:"
-echo "https://localhost:9090"
+echo "http://localhost:9090"
