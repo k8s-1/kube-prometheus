@@ -8,3 +8,6 @@ minikube start \
     --extra-config=kubelet.authorization-mode=Webhook \
     --extra-config=scheduler.address=0.0.0.0 \
     --extra-config=controller-manager.address=0.0.0.0
+kubectl apply --server-side -f manifests/setup
+kubectl wait --for condition=Established --all CustomResourceDefinition -n monitoring
+kubectl apply -f manifests/
