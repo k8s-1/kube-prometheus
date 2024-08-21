@@ -7,8 +7,11 @@ local kp =
       },
 
       prometheus+:: {
-        namespaces: ["default", "kube-system", "monitoring", "actions-runner-system"],
+        namespaces: ["actions-runner-system",],
       },
+      // prometheus+:: {
+      //   namespaces: ["default", "kube-system", "monitoring", "actions-runner-system",],
+      // },
     },
   };
 
