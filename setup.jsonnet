@@ -13,11 +13,6 @@ local kp =
       common+: {
         namespace: 'monitoring',
       },
-      
-      // declare namespaces you want monitored
-      prometheus+:: {
-        namespaces: ["default", "kube-system", "monitoring", "actions-runner-system"],
-      },
     },
   };
 
@@ -31,12 +26,12 @@ local kp =
 { 'prometheus-operator-serviceMonitor': kp.prometheusOperator.serviceMonitor } +
 { 'prometheus-operator-prometheusRule': kp.prometheusOperator.prometheusRule } +
 { 'kube-prometheus-prometheusRule': kp.kubePrometheus.prometheusRule } +
-// { ['alertmanager-' + name]: kp.alertmanager[name] for name in std.objectFields(kp.alertmanager) } +
-// { ['blackbox-exporter-' + name]: kp.blackboxExporter[name] for name in std.objectFields(kp.blackboxExporter) } +
-// { ['grafana-' + name]: kp.grafana[name] for name in std.objectFields(kp.grafana) } +
+{ ['alertmanager-' + name]: kp.alertmanager[name] for name in std.objectFields(kp.alertmanager) } +
+{ ['blackbox-exporter-' + name]: kp.blackboxExporter[name] for name in std.objectFields(kp.blackboxExporter) } +
+{ ['grafana-' + name]: kp.grafana[name] for name in std.objectFields(kp.grafana) } +
 // { ['pyrra-' + name]: kp.pyrra[name] for name in std.objectFields(kp.pyrra) if name != 'crd' } +
 { ['kube-state-metrics-' + name]: kp.kubeStateMetrics[name] for name in std.objectFields(kp.kubeStateMetrics) } +
 { ['kubernetes-' + name]: kp.kubernetesControlPlane[name] for name in std.objectFields(kp.kubernetesControlPlane) }
-// { ['node-exporter-' + name]: kp.nodeExporter[name] for name in std.objectFields(kp.nodeExporter) } +
+{ ['node-exporter-' + name]: kp.nodeExporter[name] for name in std.objectFields(kp.nodeExporter) } +
 { ['prometheus-' + name]: kp.prometheus[name] for name in std.objectFields(kp.prometheus) } +
 { ['prometheus-adapter-' + name]: kp.prometheusAdapter[name] for name in std.objectFields(kp.prometheusAdapter) }
