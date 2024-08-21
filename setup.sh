@@ -3,8 +3,8 @@
 ./build.sh namespace.jsonnet
 
 # kubectl create ns actions-runner-system
-kubectl create ns ns1
-kubectl create ns ns2
+kubectl create ns myns1
+kubectl create ns myns2
 
 sleep 3
 
