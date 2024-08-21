@@ -6,8 +6,11 @@ local kp =
         namespace: 'monitoring',
       },
 
-      prometheus+:: {
-        namespaces: ["actions-runner-system"],
+      // prometheus+:: {
+      //   namespaces: ["actions-runner-system"],
+      // },
+      prometheus+: {
+        namespaces+: ['myns1', 'myns2'],
       },
       // prometheus+:: {
       //   namespaces: ["default", "kube-system", "monitoring", "actions-runner-system",],
