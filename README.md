@@ -4,3 +4,8 @@ See https://github.com/prometheus-operator/kube-prometheus/blob/main/docs/custom
 ```
 ./build.sh setup.jsonnet
 ```
+
+## view targets
+```
+http://localhost:9090/targets?search=
+```
