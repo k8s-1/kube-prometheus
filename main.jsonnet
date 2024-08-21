@@ -13,8 +13,9 @@ local kp =
       common+: {
         namespace: 'monitoring',
       },
+      // specify list of namespaces to target
       prometheus+:: {
-        namespaces: ["default", "kube-system", "monitoring"],
+        namespaces: ["default", "kube-system", "monitoring", "actions-runner-system"],
       },
     },
   };
