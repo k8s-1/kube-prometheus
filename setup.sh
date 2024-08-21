@@ -1,9 +1,11 @@
 #!/bin/bash
 ./build.sh main.jsonnet
 
-# kubectl create ns actions-runner-system
+kubectl create ns actions-runner-system
 kubectl create namespace myns1
 kubectl create namespace myns2
+
+kubectl create namespace monitoring
 
 sleep 3
 
