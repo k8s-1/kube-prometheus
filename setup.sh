@@ -1,7 +1,12 @@
 #!/bin/bash
-./build.sh main.jsonnet
+# ./build.sh main.jsonnet
+./build.sh namespace.jsonnet
 
-kubectl create ns actions-runner-system
+# kubectl create ns actions-runner-system
+kubectl create ns ns1
+kubectl create ns ns2
+
+sleep 1
 
 kubectl apply --server-side -f manifests/setup
 kubectl wait --for condition=Established --all CustomResourceDefinition -n monitoring
