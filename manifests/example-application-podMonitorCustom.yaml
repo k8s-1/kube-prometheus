@@ -1,8 +1,0 @@
-apiVersion: monitoring.coreos.com/v1
-kind: PodMonitor
-metadata:
-  name: my-podmonitor
-  namespace: my-namespace
-spec:
-  selector:
-    matchLabels: {}
