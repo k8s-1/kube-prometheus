@@ -18,7 +18,7 @@ fi
 
 kubectl wait --for condition=Established --all CustomResourceDefinition -n monitoring
 
-kubectl create -f manifests/setup
+kubectl create -f manifests
 
 # kubectl apply -f manifests/
 
