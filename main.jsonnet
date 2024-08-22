@@ -8,24 +8,16 @@ local kp = (import 'kube-prometheus/main.libsonnet') + {
     },
   },
   exampleApplication: {
-    serviceMonitorMyNamespace: {
+    podMonitorCustom: {
       apiVersion: 'monitoring.coreos.com/v1',
-      kind: 'ServiceMonitor',
+      kind: 'PodMonitor',
       metadata: {
-        name: 'my-servicemonitor',
+        name: 'my-podmonitor',
         namespace: 'my-namespace',
       },
       spec: {
-        jobLabel: 'app',
-        endpoints: [
-          {
-            port: 'http-metrics',
-          },
-        ],
         selector: {
-          matchLabels: {
-            'app.kubernetes.io/name': 'myapp',
-          },
+          matchLabels: {},
         },
       },
     },
