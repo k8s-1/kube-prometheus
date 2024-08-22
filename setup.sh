@@ -9,16 +9,15 @@ kubectl create namespace monitoring
 
 sleep 3
 
-# kubectl apply --server-side -f manifests/setup
 if [ -n "$(ls -A ./manifests/setup)" ]; then
-  kubectl create -f manifests/setup
+  kubectl apply --server-side -f manifests/setup
 else
   echo "/setup directory is empty.. skipping kubectl create"
 fi
 
 kubectl wait --for condition=Established --all CustomResourceDefinition -n monitoring
 
-kubectl create -f manifests
+kubectl apply --server-side -f manifests
 
 # kubectl apply -f manifests/
 
