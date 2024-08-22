@@ -1,3 +1,4 @@
 resources:
+  - ns.yaml
   - deploy.yaml
   - svc.yaml
