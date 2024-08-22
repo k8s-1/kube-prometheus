@@ -3,9 +3,10 @@ See https://github.com/prometheus-operator/kube-prometheus/blob/main/docs/custom
 
 ```
 ./build.sh main.jsonnet
+./setup.sh
 ```
 
-## view targets
+## View prom targets
 ```
 http://localhost:9090/targets?search=
 ```
