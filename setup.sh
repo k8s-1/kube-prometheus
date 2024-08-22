@@ -19,8 +19,6 @@ kubectl wait --for condition=Established --all CustomResourceDefinition -n monit
 
 kubectl apply --server-side -f manifests
 
-# kubectl apply -f manifests/
-
 sleep 3
 
 cd example-app || exit 1
