@@ -5,6 +5,7 @@ local kp =
       common+: {
         namespace: 'monitoring',
       },
+      // allow prometheus access to all namespaces
       prometheus+: {
         namespaces: [],
       },
